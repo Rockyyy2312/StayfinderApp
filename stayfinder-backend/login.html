@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firebase Token Test</title>
+  <script type="module">
+    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    //  Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCD1atx9jXA--gElRFtuUzwKoPuHSBsUJw",
+      authDomain: "stayfinder-1e3dd.firebaseapp.com",
+      projectId: "stayfinder-1e3dd",
+      storageBucket: "stayfinder-1e3dd.appspot.com",
+      messagingSenderId: "896683389521",
+      appId: "1:896683389521:web:eb11285068b9f0706efe70"
+    };
+
+    //  Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    //  Login Function
+    window.login = async function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const token = await userCredential.user.getIdToken();
+        document.getElementById("output").textContent = "Firebase ID Token:\n\n" + token;
+        console.log("Token:", token);
+      } catch (error) {
+        document.getElementById("output").textContent = error.message;
+      }
+    };
+  </script>
+</head>
+<body>
+  <h2>Firebase Login</h2>
+  <input id="email" type="email" placeholder="Email" />
+  <input id="password" type="password" placeholder="Password" />
+  <button onclick="login()">Login</button>
+  <pre id="output"></pre>
+</body>
+</html>
