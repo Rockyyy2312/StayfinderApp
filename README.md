@@ -37,5 +37,16 @@ StayFinder is a full-stack web application that allows users to discover, book, 
 
 ---
 
+🔐 Firebase Configuration
+This project uses Firebase Admin SDK for authentication.
 
+For security reasons, the actual firebase-config.json file (containing service credentials) is not included in this repository.
+
+To run the backend locally, follow these steps:
+
+Go to the config/ folder.
+
+Create a file named firebase-config.json.
+
+Paste your own Firebase Admin credentials into it (from Firebase Console > Project Settings > Service Accounts).
 
