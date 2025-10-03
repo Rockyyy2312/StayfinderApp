@@ -6,7 +6,7 @@ StayFinder is a full-stack web application that allows users to discover, book, 
 
 ## 🚀 Live Demo
 
-> _Coming soon if deployed..._
+https://stayfinder-app-psi.vercel.app/
 
 ---
 
