@@ -1,3 +1,7 @@
-# secrets
-stayfinder-backend/config/firebase-config.json
+
+# Firebase secrets
+config/firebase-config.json
+firebase-config.json
+node_modules/
+
 
